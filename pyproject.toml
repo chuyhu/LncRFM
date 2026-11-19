@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "LncRFM"
+dynamic = ["version"]
+readme = "README.md"
+description = "LncRFM RNA foundation model with the LncCorpus pretraining corpus and LncBench benchmark."
+requires-python = ">=3.9"
+license = { file = "LICENSE" }
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = []
+
+keywords = ["RNA", "lncRNA", "language model", "secondary structure", "state-space model"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+"lncrfm.data" = ["*.json"]
+
+[tool.setuptools.dynamic]
+version = {attr = "lncrfm.__version__"}
